@@ -1,0 +1,80 @@
+.Weatherapp {
+  background-color: rgb(230, 243, 247);
+  border: 1px solid rgb(230, 243, 247);
+  box-shadow: 1px 1px 1px lightgrey;
+  border-radius: 15px;
+  padding: 30px 20px 10px 20px;
+  width: 500px;
+  margin: 20px;
+}
+
+.Weatherapp input,
+button {
+  padding: 10px 15px;
+  display: inline;
+}
+
+h3,
+ul {
+  text-align: left;
+  padding-left: 15px;
+  margin: 2;
+}
+
+h3 {
+  font-size: 35px;
+  font-weight: 650;
+  padding-top: 30px;
+}
+
+ul {
+  list-style: none;
+  font-size: 15px;
+  font-weight: 500;
+  padding-top: 10px;
+}
+
+.temperaturedisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.currenttemp {
+  text-align: right;
+  font-size: 50px;
+  font-weight: 450;
+  line-height: 1.5;
+  display: inline;
+}
+
+.col-6 {
+  margin: 0px;
+}
+
+.current-weather-img {
+  margin: 10px 0 0 10px;
+}
+.units {
+  position: relative;
+  top: -10px;
+  left: 2px;
+  font-size: 15px;
+  text-decoration: none;
+  font-weight: 400;
+}
+
+.day-forecast {
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.temp-forecast {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.col-2 {
+  text-align: center;
+  padding-top: 25px;
+}
