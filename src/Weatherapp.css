@@ -1,3 +1,10 @@
+.App {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .Weatherapp {
   background-color: rgb(230, 243, 247);
   border: 1px solid rgb(230, 243, 247);
@@ -77,4 +84,9 @@ ul {
 .col-2 {
   text-align: center;
   padding-top: 25px;
+}
+
+.Footerlink {
+  margin-left: 30px;
+  font-size: 15px;
 }
