@@ -6,35 +6,38 @@
 }
 
 .Weatherapp {
-  background-color: rgb(230, 243, 247);
-  border: 1px solid rgb(230, 243, 247);
-  box-shadow: 1px 1px 1px lightgrey;
-  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.11);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14.1px);
+  -webkit-backdrop-filter: blur(14.1px);
   padding: 30px 20px 10px 20px;
   width: 500px;
   margin: 20px;
 }
 
-.Weatherapp input,
-button {
-  padding: 10px 15px;
-  display: inline;
+.searchbar-input {
+  padding-left: 20px;
+}
+.searchbar-btn {
+  padding-right: 20px;
+  padding-left: 0px;
 }
 
-h3,
+.Weatherapp h3,
 ul {
   text-align: left;
   padding-left: 15px;
   margin: 2;
 }
 
-h3 {
+.Weatherapp h3 {
   font-size: 35px;
   font-weight: 650;
   padding-top: 30px;
 }
 
-ul {
+.Weatherapp ul {
   list-style: none;
   font-size: 15px;
   font-weight: 500;
@@ -45,6 +48,7 @@ ul {
   display: flex;
   align-items: center;
   justify-content: center;
+  padding-top: 30px;
 }
 
 .currenttemp {
@@ -55,13 +59,10 @@ ul {
   display: inline;
 }
 
-.col-6 {
-  margin: 0px;
-}
-
 .current-weather-img {
   margin: 10px 0 0 10px;
 }
+
 .units {
   position: relative;
   top: -10px;
@@ -72,7 +73,7 @@ ul {
 }
 
 .day-forecast {
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 500;
 }
 
@@ -81,12 +82,17 @@ ul {
   font-weight: 500;
 }
 
-.col-2 {
+.forecast {
   text-align: center;
   padding-top: 25px;
 }
 
-.Footerlink {
+.opensource-ref {
   margin-left: 30px;
   font-size: 15px;
+}
+
+.opensource-ref a {
+  color: black;
+  text-decoration: underline;
 }

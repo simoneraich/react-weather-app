@@ -6,9 +6,9 @@ export default function Weatherapp() {
   return (
     <div>
       <div className="Weatherapp">
-        <form className="mb-3">
+        <form className="mb-2">
           <div className="row">
-            <div className="col-9">
+            <div className="col-9 searchbar-input">
               <input
                 type="search"
                 placeholder="Type a city.."
@@ -16,11 +16,11 @@ export default function Weatherapp() {
                 autoComplete="off"
               />
             </div>
-            <div className="col-3">
+            <div className="col-3 searchbar-btn">
               <input
                 type="submit"
                 value="Search"
-                className="btn btn-primary w-100"
+                className="btn btn-outline-dark btn-block"
               />
             </div>
           </div>
@@ -47,7 +47,7 @@ export default function Weatherapp() {
           </div>
         </div>
         <div className="row">
-          <div className="col-2">
+          <div className="col-2 forecast">
             <span className="day-forecast">Mon</span>
             <span className="img-forecast">
               <img
@@ -58,7 +58,7 @@ export default function Weatherapp() {
             </span>
             <span className="temp-forecast">20°C</span>
           </div>
-          <div className="col-2">
+          <div className="col-2 forecast">
             <span className="day-forecast">Tue</span>
             <span className="img-forecast">
               <img
@@ -69,7 +69,7 @@ export default function Weatherapp() {
             </span>
             <span className="temp-forecast">12°C</span>
           </div>
-          <div className="col-2">
+          <div className="col-2 forecast">
             <span className="day-forecast">Wed</span>
             <span className="img-forecast">
               <img
@@ -80,7 +80,7 @@ export default function Weatherapp() {
             </span>
             <span className="temp-forecast">10°C</span>
           </div>
-          <div className="col-2">
+          <div className="col-2 forecast">
             <span className="day-forecast">Thu</span>
             <span className="img-forecast">
               <img
@@ -91,7 +91,7 @@ export default function Weatherapp() {
             </span>
             <span className="temp-forecast">71°C</span>
           </div>
-          <div className="col-2">
+          <div className="col-2 forecast">
             <span className="day-forecast">Fri</span>
             <span className="img-forecast">
               <img
@@ -102,7 +102,7 @@ export default function Weatherapp() {
             </span>
             <span className="temp-forecast">19°C</span>
           </div>
-          <div className="col-2">
+          <div className="col-2 forecast">
             <span className="day-forecast">Sat</span>
             <span className="img-forecast">
               <img
@@ -115,10 +115,10 @@ export default function Weatherapp() {
           </div>
         </div>
       </div>
-      <p className="Footerlink">
+      <p className="opensource-ref">
         <a href="https://github.com/simoneraich/react-weather-app.git">
           Open-source code,
-        </a>
+        </a>{" "}
         by Simone Raich
       </p>
     </div>
