@@ -11,9 +11,9 @@ export default function Weatherapp(props) {
     setWeatherData({
       ready: true,
       city: response.data.city,
-      temperature: response.data.temperature.current,
+      temperature: Math.round(response.data.temperature.current),
       humidity: response.data.temperature.humidity,
-      wind: response.data.wind.speed,
+      wind: Math.round(response.data.wind.speed),
       description: response.data.condition.description,
     });
   }
@@ -45,12 +45,14 @@ export default function Weatherapp(props) {
             <div className="col-6">
               <h3>{city}</h3>
               <ul>
-                Humidity: 23% <br />
-                Wind: 8 km/h
+                {weatherData.description}
+                <br />
+                Humidity: {weatherData.humidity} %<br />
+                Wind: {weatherData.wind} km/h
               </ul>
             </div>
             <div className="col-6 temperaturedisplay">
-              <span className="currenttemp">12</span>
+              <span className="currenttemp">{weatherData.temperature}</span>
               <span className="units"> °C I °F</span>
               <span className="current-weather-img">
                 <img
