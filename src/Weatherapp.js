@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
+
 import FormattedDate from "./FormattedDate";
+import Weatherinfo from "./Weatherinfo";
+import Weatherforecast from "./Weatherforecast";
+
 import "./Weatherapp.css";
 
 export default function Weatherapp(props) {
@@ -18,11 +22,26 @@ export default function Weatherapp(props) {
       date: new Date(response.data.time),
     });
   }
+  function search() {
+    const apiKey = "o0382t7818a50f033a66124d7a0cb101";
+    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    search();
+  }
+
+  function handleCityChange(event) {
+    setCity(event.target.value);
+  }
+
   if (weatherData.ready) {
     return (
       <div>
         <div className="Weatherapp">
-          <form className="mb-2">
+          <form className="mb-2" onSubmit={handleSubmit}>
             <div className="row">
               <div className="col-9 searchbar-input">
                 <input
@@ -30,6 +49,7 @@ export default function Weatherapp(props) {
                   placeholder="Type a city.."
                   className="form-control"
                   autoComplete="off"
+                  onChange={handleCityChange}
                 />
               </div>
               <div className="col-3 searchbar-btn">
@@ -41,99 +61,8 @@ export default function Weatherapp(props) {
               </div>
             </div>
           </form>
-
-          <div className="row">
-            <div className="col-6">
-              <h3>{city}</h3>
-              <ul>
-                <li className="formatted-date">
-                  <FormattedDate date={weatherData.date} />
-                </li>
-                {weatherData.description} <br />
-                Humidity: {weatherData.humidity} %<br />
-                Wind: {weatherData.wind} km/h
-              </ul>
-            </div>
-            <div className="col-6 temperaturedisplay">
-              <span className="currenttemp">{weatherData.temperature}</span>
-              <span className="units"> °C I °F</span>
-              <span className="current-weather-img">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                  alt="Weather-img"
-                  width={85}
-                />
-              </span>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-2 forecast">
-              <span className="day-forecast">Mon</span>
-              <span className="img-forecast">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                  width={40}
-                  alt="forecast-mon"
-                />
-              </span>
-              <span className="temp-forecast">20°C</span>
-            </div>
-            <div className="col-2 forecast">
-              <span className="day-forecast">Tue</span>
-              <span className="img-forecast">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                  width={40}
-                  alt="forecast-tue"
-                />
-              </span>
-              <span className="temp-forecast">12°C</span>
-            </div>
-            <div className="col-2 forecast">
-              <span className="day-forecast">Wed</span>
-              <span className="img-forecast">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                  width={40}
-                  alt="forecast-wed"
-                />
-              </span>
-              <span className="temp-forecast">10°C</span>
-            </div>
-            <div className="col-2 forecast">
-              <span className="day-forecast">Thu</span>
-              <span className="img-forecast">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                  width={40}
-                  alt="forecast-thu"
-                />
-              </span>
-              <span className="temp-forecast">71°C</span>
-            </div>
-            <div className="col-2 forecast">
-              <span className="day-forecast">Fri</span>
-              <span className="img-forecast">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                  width={40}
-                  alt="forecast-fri"
-                />
-              </span>
-              <span className="temp-forecast">19°C</span>
-            </div>
-            <div className="col-2 forecast">
-              <span className="day-forecast">Sat</span>
-              <span className="img-forecast">
-                <img
-                  src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-                  width={40}
-                  alt="forecast-sat"
-                />
-              </span>
-              <span className="temp-forecast">9°C</span>
-            </div>
-          </div>
+          <Weatherinfo data={weatherData} />
+          <Weatherforecast />
         </div>
         <p className="opensource-ref">
           <a href="https://github.com/simoneraich/react-weather-app.git">
@@ -144,9 +73,7 @@ export default function Weatherapp(props) {
       </div>
     );
   } else {
-    const apiKey = "o0382t7818a50f033a66124d7a0cb101";
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${props.defaultCity}&key=${apiKey}&units=metric`;
-    axios.get(apiUrl).then(handleResponse);
+    search();
     return "Loading Data..";
   }
 }
