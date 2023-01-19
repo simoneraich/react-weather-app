@@ -20,6 +20,7 @@ export default function Weatherapp(props) {
       wind: Math.round(response.data.wind.speed),
       description: response.data.condition.description,
       date: new Date(response.data.time),
+      icon_url: response.data.condition.icon_url,
     });
   }
   function search() {
