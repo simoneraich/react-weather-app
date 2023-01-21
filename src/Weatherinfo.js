@@ -1,8 +1,8 @@
 import React from "react";
 
 import FormattedDate from "./FormattedDate";
-import Weatherapp from "./Weatherapp";
-import WeatherIcon from "./WeatherIcon";
+import TemperatureConversion from "./TemperatureConversion";
+import WeatherIcon from "./WeatherIcon.js";
 
 export default function Weatherinfo(props) {
   return (
@@ -20,8 +20,7 @@ export default function Weatherinfo(props) {
           </ul>
         </div>
         <div className="col-6 temperaturedisplay">
-          <span className="currenttemp">{props.data.temperature}</span>
-          <span className="units"> °C I °F</span>
+          <TemperatureConversion celcius={props.data.temperature.current} />
           <WeatherIcon icon_url={props.data.icon_url} />
         </div>
       </div>

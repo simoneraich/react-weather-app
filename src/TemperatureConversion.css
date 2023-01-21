@@ -1,0 +1,20 @@
+.currenttemp {
+  text-align: right;
+  font-size: 50px;
+  font-weight: 450;
+  line-height: 1.5;
+  display: inline;
+}
+
+.current-weather-img {
+  margin: 10px 0 0 10px;
+}
+
+.units {
+  position: relative;
+  top: -10px;
+  left: 2px;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 400;
+}
