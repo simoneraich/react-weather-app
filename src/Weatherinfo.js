@@ -20,7 +20,7 @@ export default function Weatherinfo(props) {
           </ul>
         </div>
         <div className="col-6 temperaturedisplay">
-          <TemperatureConversion celcius={props.data.temperature.current} />
+          <TemperatureConversion celcius={props.data.temperature} />
           <WeatherIcon icon_url={props.data.icon_url} />
         </div>
       </div>

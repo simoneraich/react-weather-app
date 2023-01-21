@@ -12,9 +12,18 @@
 
 .units {
   position: relative;
-  top: -10px;
+  top: -24px;
   left: 2px;
   font-size: 14px;
   text-decoration: none;
-  font-weight: 400;
+  font-weight: 600;
+}
+
+a {
+  font-weight: 250;
+  text-decoration: none;
+  color: black;
+}
+:hover a {
+  color: rgb(197, 205, 212);
 }
