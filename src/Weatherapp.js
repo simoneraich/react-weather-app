@@ -20,6 +20,7 @@ export default function Weatherapp(props) {
       description: response.data.condition.description,
       date: new Date(response.data.time * 1000),
       icon_url: response.data.condition.icon_url,
+      coordinates: response.data.coordinates,
     });
   }
   function search() {
@@ -62,7 +63,7 @@ export default function Weatherapp(props) {
             </div>
           </form>
           <Weatherinfo data={weatherData} />
-          <Weatherforecast />
+          <Weatherforecast coordinates={weatherData.coordinates} />
         </div>
         <p className="opensource-ref">
           <a href="https://github.com/simoneraich/react-weather-app.git">
