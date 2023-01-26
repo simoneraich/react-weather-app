@@ -9,18 +9,17 @@ export default function WeatherForecastDay(props) {
   function day() {
     let date = new Date(props.data.time * 1000);
     let day = date.getDay();
-    let days = ["Sun", "Mon", "Tue", "Wed", "Thur"];
+    let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     return days[day];
   }
-
   return (
     <div>
       <span className="day-forecast">{day()}</span>
-      <span className="img-forecast">
+      <span>
         <img
-          src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png"
-          width={40}
-          alt="forecast-mon"
+          className="img-forecast"
+          src={props.data.condition.icon_url}
+          alt={props.data.icon}
         />
       </span>
       <span className="temp-forecast">{dailytemperature()}°C</span>

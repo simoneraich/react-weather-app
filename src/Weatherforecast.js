@@ -12,10 +12,10 @@ export default function Weatherforecast(props) {
   }, [props.coordinates]);
 
   function searchForecast() {
-    let apiKey = "o0382t7818a50f033a66124d7a0cb101";
+    let apiKey = "bd79ao40tde3dec118ca46bc3e6dd55f";
     let lon = props.coordinates.longitude;
     let lat = props.coordinates.latitude;
-    let apiUrl = `https://api.shecodes.io/weather/v1/current?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?lon=${lon}&lat=${lat}&key=${apiKey}&units=metric`;
     axios.get(apiUrl).then(handleForecastResponse);
   }
 
@@ -28,9 +28,17 @@ export default function Weatherforecast(props) {
     return (
       <div className="forecast">
         <div className="row">
-          <div className="col-2 forecast">
-            <WeatherForecastDay data={forecast} />
-          </div>
+          {forecast.map(function (dailyForecast, index) {
+            if (index < 6) {
+              return (
+                <div className="col-2 forecast" key={index}>
+                  <WeatherForecastDay data={dailyForecast} />
+                </div>
+              );
+            } else {
+              return null;
+            }
+          })}
         </div>
       </div>
     );

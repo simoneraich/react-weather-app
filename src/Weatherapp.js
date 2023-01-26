@@ -75,6 +75,6 @@ export default function Weatherapp(props) {
     );
   } else {
     search();
-    return "Loading Data..";
+    return "💤 💤 💤";
   }
 }
