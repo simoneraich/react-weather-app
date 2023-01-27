@@ -38,15 +38,15 @@ ul {
   margin-bottom: 0px;
 }
 
+.formatted-date {
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+
 .Weatherapp ul {
   list-style: none;
   font-size: 15px;
   font-weight: 400;
-}
-
-.formatted-date {
-  padding-bottom: 20px;
-  font-weight: 600;
 }
 
 .temperaturedisplay {
@@ -55,26 +55,6 @@ ul {
   justify-content: center;
   padding-top: 90px;
   padding-right: 20px;
-}
-
-.day-forecast {
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.img-forecast {
-  height: 58px;
-  margin: 0;
-}
-
-.temp-forecast {
-  font-size: 15px;
-  font-weight: 500;
-}
-
-.forecast {
-  text-align: center;
-  padding-top: 25px;
 }
 
 .opensource-ref {

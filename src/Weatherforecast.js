@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import WeatherForecastDay from "./WeatherForecastDay.js";
+import "./Forecast.css";
 
 export default function Weatherforecast(props) {
   const [loaded, setLoaded] = useState(false);
@@ -44,6 +45,6 @@ export default function Weatherforecast(props) {
     );
   } else {
     searchForecast();
-    return "Loading...";
+    return null;
   }
 }

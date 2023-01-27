@@ -1,0 +1,18 @@
+.forecast {
+  text-align: center;
+  padding-top: 15px;
+}
+.day-forecast {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.img-forecast {
+  height: 58px;
+  margin: 0;
+}
+
+.temp-forecast {
+  font-size: 15px;
+  font-weight: 500;
+}
